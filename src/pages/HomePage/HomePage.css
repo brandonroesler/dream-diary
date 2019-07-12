@@ -1,0 +1,15 @@
+.HomePage-link-margin {
+    margin-bottom: 10px;
+  }
+  
+  .HomePage {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .HomePage-controls {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    margin-left: 20px;
+  }
