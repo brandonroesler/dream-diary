@@ -32,7 +32,10 @@ class App extends Component {
         <header className='App-header-footer'>D R E A M &nbsp;&nbsp;&nbsp; D I A R Y</header>
         <Switch>
           <Route exact path='/' render={() =>
-            <HomePage />
+            <HomePage 
+              handleLogout={this.handleLogout}
+              user={this.state.user}
+            />
           } />
           <Route exact path='/login' render={({ history }) => 
             <LoginPage
