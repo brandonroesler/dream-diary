@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Route, Switch } from 'react-router-dom';
+import NavBar from '../../components/NavBar/NavBar'
 import HomePage from '../HomePage/HomePage';
 import LoginPage from '../LoginPage/LoginPage';
 import SignupPage from '../SignupPage/SignupPage';
@@ -10,8 +11,8 @@ import userService from '../../utils/userService';
 
 class App extends Component {
 
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       user: userService.getUser()
     }
@@ -27,9 +28,14 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.user)
     return (
       <div className='App'>
         <header className='App-header-footer'>D R E A M &nbsp;&nbsp;&nbsp; D I A R Y</header>
+        <NavBar
+				user={this.state.user}
+				handleLogout={this.handleLogout}
+			  />
         <Switch>
           <Route exact path='/' render={() =>
             <HomePage 
