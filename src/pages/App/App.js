@@ -7,6 +7,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import SignupPage from '../SignupPage/SignupPage';
 // import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
+import LandingPage from '../LandingPage/LandingPage';
 // import tokenService from '../../utils/tokenService';
 
 class App extends Component {
@@ -38,9 +39,12 @@ class App extends Component {
 			  />
         <Switch>
           <Route exact path='/' render={() =>
+            <LandingPage />
+          } />
+          <Route exact path='/posts' render={() =>
             <HomePage 
-              handleLogout={this.handleLogout}
-              user={this.state.user}
+            handleLogout={this.handleLogout}
+            user={this.state.user}
             />
           } />
           <Route exact path='/login' render={({ history }) => 

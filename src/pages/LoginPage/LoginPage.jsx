@@ -24,7 +24,7 @@ class LoginPage extends Component {
       // Let <App> know a user has signed up!
       this.props.handleSignupOrLogin();
       // Successfully signed up - show HomePage
-      this.props.history.push('/');
+      this.props.history.push('/posts');
     } catch (err) {
       // Use a modal or toast in your apps instead of alert
       alert('Invalid Credentials!');
